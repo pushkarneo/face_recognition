@@ -87,7 +87,7 @@ class CNN:
 	def train(self, datagen, x_train, y_train, x_test, y_test,weights_dir):
                 for epoch in range(1,self.epochs):
 		    self.model.fit_generator( datagen.flow(x_train, y_train, batch_size = self.batch_size), steps_per_epoch = len(x_train)/self.batch_size, epochs = 1, validation_data = (x_test, y_test))
-                    if epoch % 2 == 0:
+                    if epoch % 50 == 0:
                         if not os.path.isdir(weights_dir):
                             os.mkdir(weights_dir)
                         self.model.save_weights(weights_dir + "/weights_checkpoint_{}_epoch.hdf5".format(epoch))
@@ -104,7 +104,7 @@ if __name__ == '__main__':
     ap.add_argument('-infer_similarity', type=bool, default=False)
     ap.add_argument('-image2',default='./example/image2.jpeg')
     ap.add_argument("-train",type=bool,default=True)
-    ap.add_argument("-weights",default='./weights/weights_checkpoint_82_epoch.hdf5')
+    ap.add_argument("-weights",default='./weights/weights_checkpoint_90_epoch.hdf5')
     args = vars(ap.parse_args())
 
     storage_data_type = np.float32
