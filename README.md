@@ -7,13 +7,14 @@ Please download the dataset required to train this network here (http://vis-www.
 
 ## Usage Instructions
 
-To train the network
-
+### To train the network, follow the below steps
+- Download and extract the LFW dataset from above link
+- run below command, it will create .npy files after serialising the training and testing data and also train the network
 ```
 python lfw_model.py
 ```
 
-To infer from the network
+### To infer from the network
 
 ```
 python lfw_model.py -infer_similarity True -image1 <path/to/image1> -image2 <path/to/image2>  -weights <path/to/modelcheckpoint>
