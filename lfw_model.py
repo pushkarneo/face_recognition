@@ -104,7 +104,7 @@ if __name__ == '__main__':
     ap.add_argument('-infer_similarity', type=bool, default=False)
     ap.add_argument('-image2',default='./example/image2.jpeg')
     ap.add_argument("-train",type=bool,default=True)
-    ap.add_argument("-weights",default='./weights/weights_checkpoint_2_epoch.hdf5')
+    ap.add_argument("-weights",default='./weights/weights_checkpoint_82_epoch.hdf5')
     args = vars(ap.parse_args())
 
     storage_data_type = np.float32
